@@ -1,0 +1,91 @@
+{% extends "main.html" %}
+{% block bigContent %}
+
+<!--when wake up:
+control gpio with flask requests
+the requests will come from my computer, and they will control lights on my RPi, which will host the server-->
+
+<div class="jumbotron jumbotron-fluid mb-4">
+	<div class="container">
+		<h1>Raspberry Pi 3A+</h1>
+		<p>Information about the device</p>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row my-3">
+
+		<div class="col">
+			<h3>Pin Layout</h3>
+		</div>
+
+		<div class="col">
+			<h3>Board Layout</h3>
+		</div>
+
+	</div>
+
+	<div class="row">
+
+		<div class="col">
+			<img class="img-fluid" src="/static/pinout.png" alt="pins">
+		</div>
+
+		<div class="col">
+			<img class="img-fluid" src="/static/board.png" alt="board">
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+<div class="jumbotron jumbotron-fluid my-5">
+	<div class="container">
+		<h1>Manual GPIO Control</h1>
+		<p>Manual control over the induvidual GPIO's</p>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row my-3">
+
+		<div class="col">
+			<h3>Select Pins</h3>
+		</div>
+
+		<div class="col">
+			<h3>Mode</h3>
+		</div>
+
+	</div>
+	<div class="row">
+
+		<div class="col">
+			<form class="" action="/" method="post">
+				<div class="btn-group-vertical">
+					<!-- Select Pins -->
+					{% for i in range(27) %}
+					<button type="submit" name="GPIO" class="btn btn-primary">{{i}}</button>
+					{% endfor %}
+
+				</div>
+			</form>
+		</div>
+
+		<div class="col">
+			<!-- Modes: Toggle, Click (and hold) -->
+			<button type="button" class="btn btn-primary">Toggle</button>
+			<button type="button" class="btn btn-primary">Click</button>
+		</div>
+	</div>
+</div>
+
+<div class="btn-group-vertical">
+
+</div>
+
+{% endblock %}

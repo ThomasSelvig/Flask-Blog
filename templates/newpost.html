@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+{% block content %}
+
+<form method="post" class="px-4 pt-3">
+
+	<div class="form-group">
+		<label for="inputTitle">Title</label>
+		<input type="text" class="form-control" id="inputTitle" placeholder="Title">
+	</div>
+
+	<div class="form-group">
+		<label for="inputDescription">Description</label>
+		<input type="text" class="form-control" id="inputDescription" placeholder="Description">
+	</div>
+
+	<div class="form-group">
+		<label for="inputContent">Content</label>
+		<textarea rows="7" class="form-control" id="inputContent"></textarea>
+	</div>
+
+	<div class="form-group">
+		<label for="inputThumbnail">Thumbnail</label>
+		<input type="file" class="form-control-file" id="inputFile">
+	</div>
+
+	<button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+{% endblock %}
